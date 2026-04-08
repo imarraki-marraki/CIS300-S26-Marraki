@@ -4,6 +4,7 @@ body {
     color: #000033;
     background-color: #EAEAEA;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 #wrapper {
@@ -18,6 +19,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     background-color: #FFFFFF;
 }
 
@@ -75,14 +77,16 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    gap: 1.5em;
 }
 
 .toprow section,
-.bottomrow section {
+.bottomrow section,
+.teamrow section {
     border: 2px solid #000033;
     background-color: #FFFFFF;
     padding: 1em;
-    margin: 1em;
+    margin: 1em 0;
 }
 
 .toprow section {
@@ -95,14 +99,42 @@ main {
     border-bottom: 2px solid #000033;
     margin-top: 1em;
     margin-bottom: 1em;
+    align-items: stretch;
 }
 
 .teamrow section {
     width: 30%;
     text-align: center;
-    padding: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
+}
+
+.jersey-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-only-card {
+    min-height: 220px;
+}
+
+.team-link {
+    display: inline-block;
+    margin-top: 0.5em;
+    padding: 0.8em 1.1em;
+    border: 2px solid #000033;
+    border-radius: 999px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.team-link:link,
+.team-link:visited {
+    color: #000033;
+}
+
+.team-link:hover {
+    color: #1976D2;
+    box-shadow: 2px 2px 0 #000033;
 }
 
 .bottomrow section {
@@ -141,6 +173,7 @@ h3 {
 
 p {
     font-size: 100%;
+    line-height: 1.5;
 }
 
 table {
@@ -165,7 +198,7 @@ tr:nth-of-type(odd) {
 footer {
     font-size: 90%;
     text-align: center;
-    padding: 1em;
+    padding: 1.5em 1em;
     background-color: #FFFFFF;
 }
 
@@ -173,3 +206,67 @@ footer a { text-decoration: none; }
 footer a:link { color: #000033; }
 footer a:visited { color: #000033; }
 footer a:hover { color: #1976D2; }
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.7em 1em;
+    border: 2px solid #000033;
+    border-radius: 999px;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.social-icon:hover {
+    transform: translateY(-2px);
+    box-shadow: 2px 2px 0 #000033;
+}
+
+.social-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+    #wrapper {
+        width: 95%;
+    }
+
+    .top,
+    .flow {
+        flex-direction: column;
+    }
+
+    nav {
+        margin: 0 0 1.5em 0;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .toprow section,
+    .teamrow section,
+    .bottomrow section {
+        width: 100%;
+        height: auto;
+    }
+
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+If you want, I can give you the matching new index.html next.
