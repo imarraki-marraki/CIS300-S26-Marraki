@@ -1,6 +1,7 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     color: #000033;
     background-color: #EAEAEA;
@@ -32,19 +33,25 @@ header {
     border: 2px solid #000033;
 }
 
-header a {
+header a,
+nav a,
+footer a {
     text-decoration: none;
 }
 
-header a:link {
+header a:link,
+header a:visited,
+nav a:link,
+nav a:visited,
+footer a:link,
+footer a:visited {
     color: #000033;
 }
 
-header a:visited {
-    color: #000033;
-}
-
-header a:hover {
+header a:hover,
+nav a:hover,
+footer a:hover,
+.team-link:hover {
     color: #1976D2;
 }
 
@@ -57,30 +64,15 @@ nav {
     margin-right: 2em;
 }
 
-nav a {
-    text-decoration: none;
-}
-
-nav a:link {
-    color: #000033;
-}
-
-nav a:visited {
-    color: #000033;
-}
-
-nav a:hover {
-    color: #1976D2;
-}
-
 nav ul {
     list-style-type: none;
     margin: 0;
     padding-left: 0;
     display: flex;
     flex-direction: row;
-    flex-flow: nowrap;
+    flex-wrap: nowrap;
     justify-content: space-around;
+    gap: 0.4em;
 }
 
 nav li {
@@ -103,9 +95,10 @@ main {
     gap: 1.5em;
 }
 
+.card,
+.teamrow section,
 .toprow section,
-.bottomrow section,
-.teamrow section {
+.bottomrow section {
     border: 2px solid #000033;
     background-color: #FFFFFF;
     padding: 1em;
@@ -114,7 +107,7 @@ main {
 
 .toprow section {
     width: 45%;
-    height: 18em;
+    min-height: 18em;
 }
 
 .teamrow {
@@ -128,6 +121,13 @@ main {
 .teamrow section {
     width: 30%;
     text-align: center;
+}
+
+.bottomrow section,
+.about-layout section {
+    width: 45%;
+    min-height: 16em;
+    height: auto;
 }
 
 .jersey-card {
@@ -147,7 +147,6 @@ main {
     border: 2px solid #000033;
     border-radius: 999px;
     font-weight: bold;
-    text-decoration: none;
 }
 
 .team-link:link,
@@ -156,14 +155,26 @@ main {
 }
 
 .team-link:hover {
-    color: #1976D2;
     box-shadow: 2px 2px 0 #000033;
 }
 
-.bottomrow section {
-    width: 45%;
-    min-height: 16em;
+.intro-section {
+    margin-bottom: 1em;
+}
+
+.teams-intro {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 1em auto;
+    line-height: 1.6;
+}
+
+.jersey-image {
+    width: 100%;
+    max-width: 320px;
     height: auto;
+    display: block;
+    margin: 0 auto 1em auto;
 }
 
 .statsbox {
@@ -174,6 +185,60 @@ main {
     width: 100%;
 }
 
+.contact-layout {
+    align-items: flex-start;
+}
+
+.info-panel,
+.form-panel {
+    width: 45%;
+}
+
+form {
+    width: 100%;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.7em;
+    border: 1px solid #666666;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input[type="submit"],
+input[type="reset"] {
+    padding: 0.75em 1.1em;
+    border: 2px solid #000033;
+    background-color: #FFFFFF;
+    color: #000033;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 0.6em;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    color: #1976D2;
+}
+
+.form-buttons {
+    padding-top: 0.5em;
+}
+
 h1 {
     margin-bottom: 0;
     margin-top: 0;
@@ -182,12 +247,7 @@ h1 {
     letter-spacing: 0.1em;
 }
 
-h2 {
-    color: #000033;
-    font-family: Georgia, "Times New Roman", serif;
-    text-align: center;
-}
-
+h2,
 h3 {
     color: #000033;
     font-family: Georgia, "Times New Roman", serif;
@@ -226,29 +286,14 @@ footer {
     background-color: #FFFFFF;
 }
 
-footer a {
-    text-decoration: none;
-}
-
-footer a:link {
-    color: #000033;
-}
-
-footer a:visited {
-    color: #000033;
-}
-
-footer a:hover {
-    color: #1976D2;
-}
-
 @media (max-width: 900px) {
     #wrapper {
         width: 95%;
     }
 
     .top,
-    .flow {
+    .flow,
+    .contact-layout {
         flex-direction: column;
     }
 
@@ -263,7 +308,10 @@ footer a:hover {
 
     .toprow section,
     .teamrow section,
-    .bottomrow section {
+    .bottomrow section,
+    .info-panel,
+    .form-panel,
+    .about-layout section {
         width: 100%;
         height: auto;
     }
